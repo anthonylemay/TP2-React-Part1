@@ -4,6 +4,7 @@ import Categories from './meals/components/categories'
 import Category from './meals/components/category'
 import Meal from './meals/components/meal'
 
+
 const queryClient = new QueryClient()
 
 function App() {
@@ -11,9 +12,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Routes>
           <Route index element={<Categories />} />
-          <Route path="/category/:categoryName" element={<Category />}>
-              <Route path=":mealId" element={<Meal />} />
-          </Route>
+          <Route path="/category/:categoryName" element={<Category />}/>
+          <Route path="/category/:categoryName/:mealId" element={<Meal />} />
       </Routes>
 
     </QueryClientProvider>
